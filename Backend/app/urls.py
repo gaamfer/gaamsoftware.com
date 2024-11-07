@@ -1,13 +1,12 @@
-from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import ProjectsViewSet, PostsViewSet, CategoryViewSet
 
-from . import views
+router = DefaultRouter()
+router.register(r'projects', ProjectsViewSet)
+router.register(r'posts', PostsViewSet)
+router.register(r'categories', CategoryViewSet)
 
-app_name = "app"
 urlpatterns = [
-    path("", views.index, name="index"),
+    path('', include(router.urls)),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
