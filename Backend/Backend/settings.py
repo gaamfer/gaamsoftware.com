@@ -53,6 +53,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# TO ALLOW REACT FRAMEWORK TO INTERACT with Django Framework 
+REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']}
+
+CORS_ORIGIN_ALLOW_ALL = True
+
 ROOT_URLCONF = 'Backend.urls'
 
 TEMPLATES = [
@@ -84,9 +89,7 @@ DATABASES = {
     }
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "https://localhost:3000",  # React local dev server
-]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

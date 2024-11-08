@@ -36,8 +36,8 @@ class Images(models.Model):
 # Categories for the Projects 
 class Category(models.Model):
     name = models.CharField(max_length=100)
-    project = models.ForeignKey('Projects', on_delete=models.CASCADE, related_name='category', null=True)
-    post = models.ForeignKey('Posts', on_delete=models.CASCADE, related_name='category', null=True)
+    project = models.ForeignKey('Projects', on_delete=models.CASCADE, related_name='category', blank=True,null=True, default=None)
+    post = models.ForeignKey('Posts', on_delete=models.CASCADE, related_name='category', blank=True,null=True, default=None)
 
     def __str__(self):
         return self.name
