@@ -1,0 +1,6 @@
+django
+axios
+django-cors-headers
+djangorestframework
+pillow
+python-dotenv
