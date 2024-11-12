@@ -7,7 +7,21 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+
     extend: {
+      animation: {
+        border: 'background ease infinite'
+      },
+      keyframes: {
+        background: {
+          '0%, 100%': {backgroundPosition: '0% 50%'},
+          '50%': {backgroundPosition: '100% 50%'},
+
+        }
+      },
+      fontFamily:{
+        title: ["Playwrite PT", "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -15,6 +29,7 @@ export default {
     },
   },
   plugins: [
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'),
+    require('tailwindcss-motion'),
   ],
 } satisfies Config;

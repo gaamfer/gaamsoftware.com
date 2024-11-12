@@ -1,7 +1,7 @@
 import "./globals.css";
 import logo from "./images/gaamfer.ico"
 import Image from "next/image";
-
+import Footer from "./components/Footer";
 
 
 export default function RootLayout({
@@ -10,22 +10,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <header className="bg-white dark:bg-gray-900">
-          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-          
+    <html lang="en" className="h-full">
+      <body className="bg-gradient-to-b from-orange-400 to-gray-800 h-full flex flex-col overflow-auto ">
+        <header className="motion-bg-out-transparent backdrop-blur-sm fixed left-0 right-0 z-50">
+          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 motion-blur-in motion-delay-1500">
             <div className="flex h-16 items-center justify-between">
+              
+              {/* Logo */}
               <div className="md:flex md:items-center md:gap-12">
                 <a className="block text-teal-600 dark:text-teal-600" href="/">
                   <span className="sr-only">Home</span>
-                    <Image className="h-10 w-11" src={logo} alt="Logo" />
+                  <Image className="h-10 w-11" src={logo} alt="Logo" />
                 </a>
               </div>
-              {/* The Options bar */}
-              <div className="hidden md:block">
+              
+              {/* Navigation Bar */}
+              <div className="md:flex md:items-center md:gap-12">
                 <nav aria-label="Global">
-                  <ul className="flex items-center gap-6 text-sm">
+                  <ul className="flex gap-20 text-sm">
                     <li>
                       <a
                         className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
@@ -34,7 +36,6 @@ export default function RootLayout({
                         About
                       </a>
                     </li>
-
                     <li>
                       <a
                         className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
@@ -43,7 +44,6 @@ export default function RootLayout({
                         Posts
                       </a>
                     </li>
-
                     <li>
                       <a
                         className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
@@ -52,29 +52,43 @@ export default function RootLayout({
                         Projects
                       </a>
                     </li>
-
-                    
                   </ul>
                 </nav>
               </div>
-              {/* the Search Bar */}
+              
+              {/* Mobile View Button */}
+              <div className="flex items-center gap-4">
+                <div className="block md:hidden">
+                  <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="size-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              
+              {/* Search Bar */}
               <div className="relative">
-                <label htmlFor="Search" className="sr-only"> Search for... </label>
-
+                <label htmlFor="Search" className="sr-only">Search for...</label>
                 <input
                   type="text"
                   id="Search"
                   placeholder="Search..."
-                  className="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                  className="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm dark:border-gray-300 dark:bg-transparent dark:text-white placeholder-white"
                 />
-
                 <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
                   <button
                     type="button"
-                    className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                    className="text-white hover:text-white dark:text-gray-300 dark:hover:text-gray-300"
                   >
                     <span className="sr-only">Search</span>
-
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -92,32 +106,24 @@ export default function RootLayout({
                   </button>
                 </span>
               </div>
-              {/* The hidden button for mobile view */}
-              <div className="flex items-center gap-4">
-                <div className="block md:hidden">
-                  <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="size-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
+              
             </div>
           </div>
         </header>
-        {/* Continues to other pages */}
-        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-          {children}
+        
+        {/* Main Content Area */}
+        <div className="flex flex-col flex-1 overflow-auto ">
+          <div className="bg-transparent flex-1 flex flex-col ">
+            <div className="">
+              {children}
+            </div>
+          </div>
+          
+          {/* Footer */}
+          <Footer />
         </div>
       </body>
     </html>
   );
+  
 }
