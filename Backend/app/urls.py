@@ -8,3 +8,5 @@ router.register(r'posts', PostsViewSet)
 router.register(r'categories', CategoryViewSet)
 
 urlpatterns = router.urls
+
+

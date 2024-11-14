@@ -1,7 +1,9 @@
-export default function Posts() {
-    return (
-      <div>
-        <h1>Posts</h1>
-      </div>
-    );
-  }
+import {Post} from "../components/Post_comp"
+
+export default function PostsPage() {
+ return (
+  <>
+    <Post/>
+  </>
+ )
+}

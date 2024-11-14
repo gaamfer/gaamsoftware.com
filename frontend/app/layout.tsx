@@ -11,8 +11,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className="bg-gradient-to-b from-orange-400 to-gray-800 h-full flex flex-col overflow-auto ">
-        <header className="motion-bg-out-transparent backdrop-blur-sm fixed left-0 right-0 z-50">
+      <body className="bg-gradient-to-b from-orange-300 to-orange-700 h-full flex flex-col overflow-auto ">
+        <header className="motion-bg-out-transparent backdrop-blur-md fixed left-0 right-0 z-50">
           <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 motion-blur-in motion-delay-1500">
             <div className="flex h-16 items-center justify-between">
               
@@ -127,3 +127,4 @@ export default function RootLayout({
   );
   
 }
+
