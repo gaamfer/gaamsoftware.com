@@ -4,9 +4,9 @@
 export function BigSection({ children }: Readonly<{children: React.ReactNode}>) {
     return (
         <>
-            <div className=" "> {/* This is occupies an entire page */}
-                {children}
-            </div>
+          <div className="mx-auto max-w-screen-xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8">
+            {children}
+          </div>
         </>
         
     );
@@ -47,7 +47,7 @@ export function Card() {
     return (
         <>
             <section>
-                <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+                <div className="\">
                     <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">
                     <div className="grid place-content-center rounded bg-gray-100 p-6 sm:p-8">
                         <div className="mx-auto max-w-md text-center lg:text-left">

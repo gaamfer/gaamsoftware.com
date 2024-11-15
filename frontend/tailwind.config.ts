@@ -20,7 +20,7 @@ export default {
         }
       },
       fontFamily:{
-        title: ["Playwrite PT", "sans-serif"],
+        title: ["Lobster", "sans-serif"],
       },
       colors: {
         background: "var(--background)",

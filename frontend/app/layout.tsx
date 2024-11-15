@@ -1,7 +1,9 @@
+"use client";
 import "./globals.css";
 import logo from "./images/gaamfer.ico"
 import Image from "next/image";
 import Footer from "./components/Footer";
+import { useState, useEffect } from "react";
 
 
 export default function RootLayout({
@@ -9,11 +11,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [ishome, setIsHome] = useState<boolean>(false);
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setMounted(true);
+    if (typeof window !== 'undefined') {
+      setIsHome(window.location.pathname === '/');
+    }
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <html lang="en" className="h-full">
       <body className="bg-gradient-to-b from-orange-300 to-orange-700 h-full flex flex-col overflow-auto ">
-        <header className="motion-bg-out-transparent backdrop-blur-md fixed left-0 right-0 z-50">
-          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 motion-blur-in motion-delay-1500">
+        <header className="fixed left-0 right-0 z-50 motion-bg-out-transparent backdrop-blur-md">
+          <div className={`mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ${ishome? ' motion-blur-in motion-delay-1500': ''}`}>
             <div className="flex h-16 items-center justify-between">
               
               {/* Logo */}

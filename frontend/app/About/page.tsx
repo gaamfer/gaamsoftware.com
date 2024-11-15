@@ -1,19 +1,21 @@
 import {BigSection, SinglePost, Card, Banner} from "../components/sections"
+import Image from 'next/image';
+import me from "../images/Gabi.png";
 
 export default function About() {
     return (
       <>
-        <div className="min-h-screen flex-col justify-center items-center md:p-20">
+      <BigSection>
+        <div className="min-h-screen flex-col justify-center items-center">
             <h1 className="text-4xl font-extrabold mb-4 text-gray-800"> About </h1>
-            <BigSection>
               <section>
                 <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
                   <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
                     <div className="relative z-10 lg:py-16">
                       <div className="relative h-64 sm:h-80 lg:h-full">
-                        <img
+                        <Image
                           alt=""
-                          src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                          src={me}
                           className="absolute inset-0 h-full w-full object-cover"
                         />
                       </div>
@@ -46,8 +48,8 @@ export default function About() {
                   </div>
                 </div>
               </section>
-            </BigSection>
-        </div>
+          </div>
+        </BigSection>
         <div className="p-4 md:p-8">
           <Banner/>
         </div>

@@ -7,7 +7,7 @@ class Projects(models.Model):
     info = models.CharField(max_length=400)
     project_pic = models.ImageField(upload_to='project_pic/')
     timestamp = models.DateTimeField(auto_now_add=True)
-    links = models.ManyToManyField('Link', related_name='projects')
+    links = models.ForeignKey('Link', on_delete=models.CASCADE,related_name='projects',null=False,default=1)
 
     def __str__(self):
         return self.header
@@ -49,7 +49,7 @@ class Posts(models.Model):
     info = models.CharField(max_length=400)
     project_pic = models.ImageField(upload_to='project_pic/')
     timestamp = models.DateTimeField(auto_now_add=True)
-    links = models.ManyToManyField('Link', related_name='posts')
+    links = models.ForeignKey('Link', on_delete=models.CASCADE,related_name='posts',null=False,default=1)
 
     def __str__(self):
         return self.header
