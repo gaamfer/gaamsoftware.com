@@ -1,6 +1,6 @@
 import {Post} from "../components/Post_comp"
 import { BigSection } from "../components/sections"
-import RootLayout from "../layout"
+
 
 export default function PostsPage() {
  return (

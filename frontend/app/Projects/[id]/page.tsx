@@ -4,6 +4,7 @@
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { API_URL } from '@/services/info'; // Assuming you have an API URL
+import Image from 'next/image';
 
 // interface para project
 interface Project{
@@ -42,7 +43,7 @@ export default function Project() {
       <div>
         <h1>{project.header}</h1>
         <p>{project.info}</p>
-        <img src={project.project_pic ?? ''} alt={project.header} />
+        <Image src={project.project_pic ?? ''} alt={project.header} />
       </div>    
     </>
   );

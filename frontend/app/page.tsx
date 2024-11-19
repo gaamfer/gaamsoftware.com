@@ -1,4 +1,4 @@
-import {BigSection, SinglePost, Card} from "./components/sections"
+import {BigSection, Card} from "./components/sections"
 
 export default function Home() {
   return (

@@ -1,4 +1,4 @@
-import {BigSection, SinglePost, Card, Banner} from "../components/sections"
+import {BigSection, Banner} from "../components/sections"
 import Image from 'next/image';
 import me from "../images/Gabi.png";
 

@@ -4,6 +4,8 @@
 import { PostsData} from "@/services/info";
 import { useEffect, useState } from "react";
 
+
+
 // Create an interface so that TS inteerpretates better the Post
 
 interface Post {
@@ -26,8 +28,8 @@ export function Post() {
               const data = await PostsData();
               setPosts(data); // asumming the data has a key results 
               setLoading(false);
-          } catch (error: any) {
-            setError(error)
+          } catch (error: unknown) {
+            setError(error as Error)
             setLoading(false)
           }
       }
@@ -47,11 +49,13 @@ export function Post() {
         <div className="px-4 py-16 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post) => (
               <article key={post.id} className="overflow-hidden rounded-lg shadow transition-transform transform hover:scale-105 hover:shadow-2xl">
-                <img
-                  alt=""
-                  src={post.project_pic ?? ""}
-                  className="h-56 w-full object-cover"
-                />
+                {post.project_pic && (
+                  <img
+                    alt=""
+                    src={post.project_pic}
+                    className="h-56 w-full object-cover"
+                  />
+                )}
 
                 <div className="bg-white p-4 sm:p-6">
                   <time dateTime={post.timestamp} className="block text-xs text-gray-500"> {post.timestamp} </time>

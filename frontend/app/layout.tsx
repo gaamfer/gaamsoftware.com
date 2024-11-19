@@ -4,6 +4,7 @@ import logo from "./images/gaamfer.ico"
 import Image from "next/image";
 import Footer from "./components/Footer";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 
 export default function RootLayout({
@@ -34,10 +35,10 @@ export default function RootLayout({
               
               {/* Logo */}
               <div className="md:flex md:items-center md:gap-12">
-                <a className="block text-teal-600 dark:text-teal-600" href="/">
+                <Link className="block text-teal-600 dark:text-teal-600" href="/">
                   <span className="sr-only">Home</span>
                   <Image className="h-10 w-11" src={logo} alt="Logo" />
-                </a>
+                </Link>
               </div>
               
               {/* Navigation Bar */}
@@ -45,28 +46,28 @@ export default function RootLayout({
                 <nav aria-label="Global">
                   <ul className="flex gap-20 text-sm">
                     <li>
-                      <a
+                      <Link
                         className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                         href="/About"
                       >
                         About
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                         href="/Posts"
                       >
                         Posts
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                         href="/Projects"
                       >
                         Projects
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>

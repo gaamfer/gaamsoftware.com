@@ -2,6 +2,7 @@
 import { ProjectsData} from "@/services/info";
 import { useEffect, useState } from "react";
 
+
 // Create an interface to Projects fields
 
 interface Project {
@@ -27,8 +28,8 @@ export function Project(){
                 const data = await ProjectsData();
                 setProj(data);
                 setLoading(false);
-            } catch (error: any) {
-                setError(error)
+            } catch (error: unknown) {
+                setError(error as Error)
                 setLoading(false)
             }
         }
@@ -76,9 +77,9 @@ export function Project(){
                 ))}
             </div>
         </>
+
     );
 }
-
 
 
 
