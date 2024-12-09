@@ -3,6 +3,7 @@
 
 import { PostsData} from "@/services/info";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 
 
@@ -116,26 +117,26 @@ export function Card_Post() {
                                 <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">Recent posts</h2>
 
                                 <p className="mt-4 text-gray-100">
-                                This are the latest posts I've made and are ready for you to see them...
+                                This are the latest posts I&quot;ve made and are ready for you to see them...
                                 </p>
                                 <p className="mt-10 text-gray-100 font-extrabold text-3xl">
                                 Enjoy   😊
                                 </p>
                             </header>
 
-                            <a
+                            <Link
                                 href="/Posts"
                                 className="mt-8 inline-block rounded border border-gray-900 bg-gray-900 px-12 py-3 text-sm font-medium text-white transition hover:shadow focus:outline-none focus:ring"
                             >
                                 All posts
-                            </a>
+                            </Link>
                             </div>
                         </div>
 
                         <div className="lg:col-span-2 lg:py-8">
                             <ul className="grid grid-cols-2 gap-4 ">
                             {post.slice(-2).map((post) => (
-                                <li>
+                                <li key={post.id}>
                                     <a href={`/Posts/${post.id}`} className="group block">
                                     <img
                                         src={post.post_pic ?? ""}

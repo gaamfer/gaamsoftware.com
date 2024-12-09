@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <footer className="bg-orange-700 text-gray-200 py-10 w-full font-serif">
         <div className="mx-auto max-w-screen-xl px-10 sm:px-4 lg:px-6 flex flex-wrap gap-6 justify-center lg:justify-start">
             <div id="context" className="w-full lg:w-80 h-15 p-4 lg:px-4 bg-orange-800 rounded-lg shadow-md mb-6 lg:mb-0 lg:mr-20">
-            <p className='text-m'>"Welcome to my personal corner of the web – where I share my passions, projects, and a glimpse into my world!"</p>
+            <p className='text-m'>&quot;Welcome to my personal corner of the web – where I share my passions, projects, and a glimpse into my world!&quot;</p>
             <p className='font-bold mt-1'>Gabriel Ferreira</p>
             </div>
 

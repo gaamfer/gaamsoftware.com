@@ -2,10 +2,10 @@
 
 import { useParams } from 'next/navigation';
 import {useEffect, useState} from 'react';
-import { API_URL } from '@/services/info';
+// import { API_URL } from '@/services/info';
 import { BigSection } from '@/app/components/sections';
 import { PostData } from '@/services/info';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 interface Post{
     id: number;
@@ -46,7 +46,7 @@ export default function Post(){
                 <h1>{post.header}</h1>
                 <img
                 alt="" 
-                src={post.post_pic}
+                src={post.post_pic ? post.post_pic : ""}
                 />
                 <p>{post.info}</p>
             </div>

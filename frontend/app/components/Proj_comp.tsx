@@ -121,7 +121,7 @@ export function Card_Proj() {
                                 <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">Recent Projects</h2>
 
                                 <p className="mt-4 text-gray-100">
-                                This are the latest projects I've made and are ready for you to see them...
+                                This are the latest projects I&quot;ve made and are ready for you to see them...
                                 </p>
                                 <p className="mt-10 text-gray-100 font-extrabold text-3xl">
                                 Enjoy   😊
@@ -140,7 +140,7 @@ export function Card_Proj() {
                         <div className="lg:col-span-2 lg:py-8">
                             <ul className="grid grid-cols-2 gap-4">
                             {proj.slice(-2).map((proj) => (
-                                <li>
+                                <li key={proj.id}>
                                     <a href={proj.links} className="group block">
                                     <img
                                         src={proj.project_pic ?? ""}
