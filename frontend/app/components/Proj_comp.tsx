@@ -57,6 +57,7 @@ export function Project(){
                             src={proj.project_pic ?? ""}
                             alt=""
                             className="h-80 w-full rounded-t-3xl object-cover"
+                            style={{backgroundColor: "#c2d1cc"}}
                         />
                     
                         <div className="p-4 text-center">
@@ -81,16 +82,91 @@ export function Project(){
     );
 }
 
+export function Card_Proj() {
+    const [proj, setProj] = useState<Project[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<Error | null>(null);
 
+    useEffect(()=>{
+        async function fetchData() {
+            try{
+                const data = await ProjectsData();
+                setProj(data);
+                setLoading(false);
+            } catch (error: unknown) {
+                setError(error as Error)
+                setLoading(false)
+            }
+        }
+        fetchData();
+    }, []);
 
+    if (loading){
+        return <div>Loading...</div>;
+      }
+    
+    if (error) {
+    return <div> Error loading data: {error.message} </div>;
+    }
 
+    return (
+        <>
+            
+                <section className="mb-40">
+                    <div className="\">
+                        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">
+                        <div className="grid place-content-center rounded bg-orange-800 p-6 sm:p-8">
+                            <div className="mx-auto max-w-md text-center lg:text-left">
+                            <header>
+                                <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">Recent Projects</h2>
 
+                                <p className="mt-4 text-gray-100">
+                                This are the latest projects I've made and are ready for you to see them...
+                                </p>
+                                <p className="mt-10 text-gray-100 font-extrabold text-3xl">
+                                Enjoy   😊
+                                </p>
+                            </header>
 
+                            <a
+                                href="/Projects"
+                                className="mt-8 inline-block rounded border border-gray-900 bg-gray-900 px-12 py-3 text-sm font-medium text-white transition hover:shadow focus:outline-none focus:ring"
+                            >
+                                Full list
+                            </a>
+                            </div>
+                        </div>
 
+                        <div className="lg:col-span-2 lg:py-8">
+                            <ul className="grid grid-cols-2 gap-4">
+                            {proj.slice(-2).map((proj) => (
+                                <li>
+                                    <a href={proj.links} className="group block">
+                                    <img
+                                        src={proj.project_pic ?? ""}
+                                        alt=""
+                                        className="aspect-square w-full rounded object-cover"
+                                        style={{backgroundColor: "#c2d1cc"}}
+                                    />
 
+                                    <div className="mt-3">
+                                        <h3
+                                        className="text-xl font-bold text-gray-900 group-hover:underline group-hover:underline-offset-4"
+                                        >
+                                            {proj.header}
+                                        </h3>
 
-
-
-
-
-
+                                        {/* <p className="mt-1 text-sm text-gray-700">{proj.timestamp.split('T')[0]}</p> */}
+                                    </div>
+                                    </a>
+                                </li>
+                            ))}
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+            
+        </>
+    );
+}

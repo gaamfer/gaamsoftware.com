@@ -1,17 +1,72 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquareGithub, faLinkedin, faYoutube, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const Footer: React.FC = () => {
+  const Year = new Date().getFullYear();
   return (
-    <footer className="bg-transparent text-white py-10 w-full">
-        <div className="mx-auto max-w-screen-xl px-2 sm:px-4 lg:px-6">
-            <p className="text-center text-sm">
-            &copy; {new Date().getFullYear()} Lorem ipsum dolor sit 
-            amet consectetur adipisicing elit. Cum dolore culpa magnam ab, 
-            vero voluptatem nostrum quisquam, aperiam deleniti pariatur vitae 
-            perferendis laboriosam? Rerum quas repellendus sint voluptate? Quibusdam, quod.
-            </p>
+    <>
+      <footer className="bg-orange-700 text-gray-200 py-10 w-full font-serif">
+        <div className="mx-auto max-w-screen-xl px-10 sm:px-4 lg:px-6 flex flex-wrap gap-6 justify-center lg:justify-start">
+            <div id="context" className="w-full lg:w-80 h-15 p-4 lg:px-4 bg-orange-800 rounded-lg shadow-md mb-6 lg:mb-0 lg:mr-20">
+            <p className='text-m'>"Welcome to my personal corner of the web – where I share my passions, projects, and a glimpse into my world!"</p>
+            <p className='font-bold mt-1'>Gabriel Ferreira</p>
+            </div>
+
+            {/* Contacts Column */}
+            <div id="contacts" className="flex flex-col text-l space-y-2 mx-12 w-full lg:w-auto items-center lg:items-start">
+            <p className="font-bold text-gray-800">Contacts</p>
+            <a href="mailto:gabriel.ferreira@gaamsoftware.com" className="hover:underline">Email</a>
+            <a href="/forms" className="hover:underline">Seek Me</a>
+            </div>
+
+          {/* Useful Links Column */}
+          <div id="useful" className="flex flex-col text-l space-y-2 mx-12 w-full lg:w-auto items-center lg:items-start">
+            <p className="font-bold text-gray-800">Useful</p>
+            <a href="/todo-list" className="hover:underline">Inspiration</a>
+            <a href="/app-stack" className="hover:underline">APP Stack</a>
+            <a href="/link-library" className="hover:underline">Link Library</a>
+            <a href="/link-library" className="hover:underline">Tags</a>
+          </div>
+
+          {/* Tools Column */}
+          <div id="tools" className="flex flex-col text-l space-y-2 mx-12 w-full lg:w-auto items-center lg:items-start">
+            <p className="font-bold text-gray-800">Tools</p>
+            <a href="/todo-list" className="hover:underline">My To-Do List</a>
+            <a href="/app-stack" className="hover:underline">Documents</a>
+          </div>
+
+          {/* About Column */}
+          <div id="about" className="flex flex-col text-l space-y-2 mx-12 w-full lg:w-auto items-center lg:items-start">
+            <p className="font-bold text-gray-800">About</p>
+            <a href="/todo-list" className="hover:underline">My-CV</a>
+            <a href="/app-stack" className="hover:underline">Related</a>
+          </div>
+
+          <hr className="w-full border-gray-300" />
         </div>
-    </footer>
+
+        <div className="mx-auto max-w-screen-xl lg:px-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between w-full">
+            <p className='font-serif text-xs'> Copyright © {Year} gaamfer. Privacy Policy. All rights reserved.</p>
+            <div id="socials" className="flex space-x-6 text-3xl mt-2 lg:mt-2">
+              <a href="http://github.com/gaamfer">
+                <FontAwesomeIcon icon={faSquareGithub} />
+              </a>
+              <a href="http://Linkedin.com">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+              <a href="http://youtube.com">
+                <FontAwesomeIcon icon={faYoutube} />
+              </a>
+              <a href="http://x.com">
+                <FontAwesomeIcon icon={faXTwitter} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 };
 

@@ -12,6 +12,11 @@ export async function PostsData() {
         return response.data;
 }
 
+export async function PostData(id: number) {
+    const response = await axios.get(`${API_URL}posts/${id}`);
+    return response.data;
+}
+
 export async function CategoriesData() {
     const response = await axios.get(`${API_URL}categories/`);
     return response.data;
