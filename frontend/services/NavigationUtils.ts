@@ -11,15 +11,26 @@ export function Clickbar() {
         home?.classList.toggle('hidden');
         navi?.classList.toggle('block');
         seabar?.classList.toggle('hidden');
-        if (seabar) {
+        scroll_container?.classList.toggle('hidden');
+        allBlack?.classList.toggle('hidden');
+        if (seabar && allBlack) {
+            
+            // allBlack.style.animation = sidebarOpen ? 'slideIn 0.5s forwards' : 'slideOut 0.5s forwards';
             seabar.style.marginTop = '10px';
             seabar.style.position = 'absolute';
             seabar.style.left = '50%';
             seabar.style.transform = 'translateX(-50%)';
         }
-        scroll_container?.classList.toggle('hidden');
-        allBlack?.classList.toggle('hidden'); 
+
     }    
     sidebarOpen = !sidebarOpen;
     toggleElements();
+
+    allBlack?.addEventListener('click', () => {
+        if (sidebarOpen) {
+            setTimeout(() => {
+                Clickbar();
+            }, 400); // Adjust the delay time as needed
+        }
+    });
 }
