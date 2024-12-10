@@ -39,7 +39,7 @@ export default function RootLayout({
         
         {/* Logo */}
         <div id='home' className="md:flex md:items-center md:gap-12">
-          <Link className="block text-teal-600 dark:text-teal-600" href="/">
+          <Link className="block text-teal-600 dark:text-teal-600" href="/#homepage">
             <span className="sr-only">Home</span>
             <Image className="h-10 w-11" src={logo} alt="Logo" />
           </Link>
@@ -163,7 +163,7 @@ export default function RootLayout({
         </nav>
 
         <div id='bottom_home' className="fixed bottom-10 left-0 w-full p-4 flex justify-center items-center bg-transparent backdrop-blur-sm">
-            <Link  href="/" className="block text-teal-600 dark:text-teal-600"    >
+            <Link  href="/#homepage" className="block text-teal-600 dark:text-teal-600"    >
               <span className="sr-only">Home</span>
               <Image className="h-13 w-14" src={logo} alt="Logo" />
             </Link>

@@ -9,9 +9,9 @@ import { Card_Post } from "./components/Post_comp";
 export default function Home() {
   return (
     <>
-      <div className="min-h-screen flex flex-col justify-center items-center p-4 md:p-8">
+      <div id="homepage" className="min-h-screen flex flex-col justify-center items-center p-4 md:p-8">
         
-        <h1 className="font-title text-gray-600 text-6xl md:text-9xl motion-blur-in-3xl motion-duration-500 text-center">
+        <h1 id="homepage" className="font-title text-gray-600 text-6xl md:text-9xl motion-blur-in-3xl motion-duration-500 text-center">
           Welcome
         </h1>
 

@@ -51,7 +51,9 @@ export default function About() {
             </div>
           </section>
         </div>
-          <Banner/>
+        
+        <span id='TechStack'></span>
+        <Banner/>
       </BigSection>
       </>
         

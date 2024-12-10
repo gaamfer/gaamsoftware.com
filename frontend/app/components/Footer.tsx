@@ -2,6 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareGithub, faLinkedin, faYoutube, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 
+const MY_CV_URL = process.env.NEXT_PUBLIC_MY_CV_URL;
+
 const Footer: React.FC = () => {
   const Year = new Date().getFullYear();
   return (
@@ -17,14 +19,14 @@ const Footer: React.FC = () => {
             <div id="contacts" className="flex flex-col text-l space-y-2 mx-12 w-full lg:w-auto items-center lg:items-start">
             <p className="font-bold text-gray-800">Contacts</p>
             <a href="mailto:gabriel.ferreira@gaamsoftware.com" className="hover:underline">Email</a>
-            <a href="/forms" className="hover:underline">Seek Me</a>
+            <a href="/ContactMe" className="hover:underline">Seek Me</a>
             </div>
 
           {/* Useful Links Column */}
           <div id="useful" className="flex flex-col text-l space-y-2 mx-12 w-full lg:w-auto items-center lg:items-start">
             <p className="font-bold text-gray-800">Useful</p>
-            <a href="/todo-list" className="hover:underline">Inspiration</a>
-            <a href="/app-stack" className="hover:underline">APP Stack</a>
+            <a href="/Inspiration" className="hover:underline">Inspiration</a>
+            <a href="/About/TechStack" className="hover:underline">My Tech Stack</a>
             <a href="/link-library" className="hover:underline">Link Library</a>
             <a href="/link-library" className="hover:underline">Tags</a>
           </div>
@@ -33,14 +35,14 @@ const Footer: React.FC = () => {
           <div id="tools" className="flex flex-col text-l space-y-2 mx-12 w-full lg:w-auto items-center lg:items-start">
             <p className="font-bold text-gray-800">Tools</p>
             <a href="/todo-list" className="hover:underline">My To-Do List</a>
-            <a href="/app-stack" className="hover:underline">Documents</a>
+            <a href="/Documents" className="hover:underline">Documents</a>
           </div>
 
           {/* About Column */}
           <div id="about" className="flex flex-col text-l space-y-2 mx-12 w-full lg:w-auto items-center lg:items-start">
             <p className="font-bold text-gray-800">About</p>
-            <a href="/todo-list" className="hover:underline">My-CV</a>
-            <a href="/app-stack" className="hover:underline">Related</a>
+            <a href={MY_CV_URL} className="hover:underline" download="Gabriel_Ferreira_CV.pdf">My-CV</a>
+            <a href="/About" className="hover:underline">Related</a>
           </div>
 
           <hr className="w-full border-gray-300" />
@@ -53,13 +55,13 @@ const Footer: React.FC = () => {
               <a href="http://github.com/gaamfer">
                 <FontAwesomeIcon icon={faSquareGithub} />
               </a>
-              <a href="http://Linkedin.com">
+              <a href="https://www.linkedin.com/in/gabriel-ferreira-78b521146/">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
-              <a href="http://youtube.com">
+              <a href="https://www.youtube.com/@gaamfer">
                 <FontAwesomeIcon icon={faYoutube} />
               </a>
-              <a href="http://x.com">
+              <a href="https://x.com/GGAFerreira">
                 <FontAwesomeIcon icon={faXTwitter} />
               </a>
             </div>
