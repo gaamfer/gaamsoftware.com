@@ -22,5 +22,4 @@ export function Clickbar() {
     }    
     sidebarOpen = !sidebarOpen;
     toggleElements();
-    Clickbar()
 }

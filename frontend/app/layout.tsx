@@ -137,25 +137,24 @@ export default function RootLayout({
         <nav aria-label="Global">
           <ul className=" font-bold flex flex-col gap-10 text-2xl justify-center items-center mt-20">
             <li className="mt-20">
-              <Link onClick={Clickbar}
+              <Link  href="/About" onClick={Clickbar}
               className=" text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-              href="/About"
+              
               >
               About
               </Link>
             </li>
             <li className="mt-20">
-              <Link onClick={Clickbar}
+              <Link href="/Posts" onClick={Clickbar}
               className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-              href="/Posts"
               >
               Posts
               </Link>
             </li>
             <li className="mt-20">
-              <Link onClick={Clickbar}
+              <Link href="/Projects" onClick={Clickbar}
               className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-              href="/Projects"
+              
               >
               Projects
               </Link>
@@ -164,7 +163,7 @@ export default function RootLayout({
         </nav>
 
         <div id='bottom_home' className="fixed bottom-10 left-0 w-full p-4 flex justify-center items-center bg-transparent backdrop-blur-sm">
-            <Link className="block text-teal-600 dark:text-teal-600" onClick={Clickbar} href="/">
+            <Link  href="/" className="block text-teal-600 dark:text-teal-600" onClick={Clickbar} >
               <span className="sr-only">Home</span>
               <Image className="h-13 w-14" src={logo} alt="Logo" />
             </Link>
