@@ -7,11 +7,11 @@ export default function PostsPage() {
   <>
     
     <BigSection>
-      <h1 className="text-4xl font-extrabold mb-4 text-gray-800 animate-pulse ml-4">POSTS</h1>
-      <p className="text-xl text-gray-700 p-4 w-1/3 text-wrap">
-      Discover my insights, ideas, and research in the ever-evolving world of Computer Science.
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos vero fugit soluta quia nisi cum quaerat perspiciatis in fugiat eos quis commodi esse dignissimos, odio ratione illo aperiam unde aspernatur?
+      <h1 className=" mt-10 text-4xl font-extrabold mb-10 text-gray-800 animate-pulse ml-4">POSTS</h1>
+      <p className=" mb-2 font-bold text-3xl text-gray-700 p-4  md:w-2/3 text-wrap">
+      In this section lies a collection of my all-time posts, showcasing my journey in computer Science.
       </p>
+      <p className=" mb-10 font-bold text-3xl text-gray-700 p-4  md:w-2/3 text-wrap">Hope you enjoy it! 😊 </p>
       <Post/>
     </BigSection>
   </>

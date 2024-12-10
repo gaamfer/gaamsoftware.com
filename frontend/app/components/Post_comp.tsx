@@ -49,13 +49,16 @@ export function Post() {
       <>
         <div className="px-4 py-16 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post) => (
-              <article key={post.id} className="overflow-hidden rounded-lg shadow transition-transform transform hover:scale-105 hover:shadow-2xl">
+                <article key={post.id} className="overflow-hidden rounded-lg shadow transition-transform transform hover:scale-105 hover:shadow-2xl">
                 {post.post_pic && (
+                  <div className="flex justify-center bg-slate-600">
                   <img
                     alt=""
                     src={post.post_pic}
-                    className="h-56 w-full object-cover"
+                    className="h-60 w-78 object-cover"
+                    
                   />
+                  </div>
                 )}
 
                 <div className="bg-white p-4 sm:p-6">
@@ -69,7 +72,7 @@ export function Post() {
                   {post.info}
                   </p>
                 </div>
-              </article>
+                </article>
             ))}
         </div>
         
