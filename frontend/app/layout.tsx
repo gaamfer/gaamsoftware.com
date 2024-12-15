@@ -97,7 +97,7 @@ export default function RootLayout({
         </div>
         
         {/* Search Bar */}
-        <div id='search-bar' className="relative hidden md:block">
+        {/* <div id='search-bar' className="relative hidden md:block">
           <label htmlFor="Search" className="sr-only">Search for...</label>
           <input
           type="text"
@@ -127,7 +127,7 @@ export default function RootLayout({
             </svg>
           </button>
           </span>
-        </div>
+        </div> */}
 
       </div>
       </div>

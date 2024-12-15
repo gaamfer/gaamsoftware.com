@@ -1,6 +1,8 @@
 import {BigSection, Banner} from "../components/sections"
 import Image from 'next/image';
 import me from "../images/Gabi.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquareGithub, faLinkedin, faYoutube, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export default function About() {
     return (
@@ -45,13 +47,31 @@ export default function About() {
               >
                 Get in Touch
               </a>
+                <div className="mx-auto max-w-screen-xl  mt-8">
+                  <div className="flex flex-col lg:flex-row md:items-center justify-between w-full">
+                      <div id="socials" className="flex space-x-6 text-3xl mt-2 lg:mt-2 text-black ">
+                        <a href="http://github.com/gaamfer" className="transform transition-transform hover:scale-125">
+                          <FontAwesomeIcon icon={faSquareGithub} />
+                        </a>
+                        <a href="https://www.linkedin.com/in/gabriel-ferreira-78b521146/" className="transform transition-transform hover:scale-125">
+                          <FontAwesomeIcon icon={faLinkedin} />
+                        </a>
+                        <a href="https://www.youtube.com/@gaamfer" className="transform transition-transform hover:scale-125">
+                          <FontAwesomeIcon icon={faYoutube} />
+                        </a>
+                        <a href="https://x.com/GGAFerreira" className="transform transition-transform hover:scale-125">
+                          <FontAwesomeIcon icon={faXTwitter} />
+                        </a>
+                      </div>
+                    </div>
                   </div>
+                </div>
                 </div>
               </div>
             </div>
           </section>
         </div>
-        
+
         <span id='TechStack'></span>
         <Banner/>
       </BigSection>

@@ -42,13 +42,20 @@ export default function Post(){
     return (
         <>
             <BigSection>
-            <div className='py-16 '>
-                <h1>{post.header}</h1>
-                <img
-                alt="" 
-                src={post.post_pic ? post.post_pic : ""}
-                />
-                <p>{post.info}</p>
+            <div className='p-8 bg-slate-700 rounded-lg '>
+                <div className='md:mx-16 h-screen '>
+                    <h1 className='mt-4 md:text-start text-center font-extrabold text-3xl'>{post.header}</h1>
+                    <div className="flex justify-center m-10 ">
+                        <img
+                        alt="" 
+                        src={post.post_pic ? post.post_pic : ""}
+                        className="max-w-full"
+                        />
+                    </div>
+                    <div className='rounded-lg md:flex md:justify-center font-semibold bg-white'>
+                    <p className='m-2 text-black font-semibold' >{post.info}</p>
+                    </div>
+                </div>    
             </div>
             </BigSection>
             {/* Ill still have to find some termplate for this part */}
