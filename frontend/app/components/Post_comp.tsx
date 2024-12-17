@@ -1,10 +1,10 @@
 "use client";
 
-
+import React from "react";
 import { PostsData} from "@/services/info";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-
+import Markdown from 'react-markdown';
 
 
 // Create an interface so that TS inteerpretates better the Post
@@ -69,7 +69,7 @@ export function Post() {
                   </a>
 
                   <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                  {post.info}
+                   <Markdown>{post.info}</Markdown>
                   </p>
                 </div>
                 </article>

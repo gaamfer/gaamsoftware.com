@@ -1,10 +1,12 @@
 "use client"
 
+import React from 'react';
 import { useParams } from 'next/navigation';
 import {useEffect, useState} from 'react';
 // import { API_URL } from '@/services/info';
 import { BigSection } from '@/app/components/sections';
 import { PostData } from '@/services/info';
+import Markdown from 'react-markdown';
 // import Image from 'next/image';
 
 interface Post{
@@ -42,8 +44,8 @@ export default function Post(){
     return (
         <>
             <BigSection>
-            <div className='p-8 bg-slate-700 rounded-lg '>
-                <div className='md:mx-16 h-screen '>
+            <div className='p-8 bg-slate-700 rounded-lg'>
+                <div className='md:mx-16'>
                     <h1 className='mt-4 md:text-start text-center font-extrabold text-3xl'>{post.header}</h1>
                     <div className="flex justify-center m-10 ">
                         <img
@@ -53,7 +55,7 @@ export default function Post(){
                         />
                     </div>
                     <div className='rounded-lg md:flex md:justify-center font-semibold bg-white'>
-                    <p className='m-2 text-black font-semibold' >{post.info}</p>
+                    <p className='m-2 text-black font-semibold' > <Markdown>{post.info}</Markdown></p>
                     </div>
                 </div>    
             </div>
