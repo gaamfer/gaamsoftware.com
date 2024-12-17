@@ -151,7 +151,7 @@ export function Card_Proj() {
 
                                     <div className="mt-3">
                                         <h3
-                                        className="text-xl font-bold text-gray-900 group-hover:underline group-hover:underline-offset-4"
+                                        className="text-xl font-bold dark:text-white text-gray-900 group-hover:underline group-hover:underline-offset-4"
                                         >
                                             {proj.header}
                                         </h3>

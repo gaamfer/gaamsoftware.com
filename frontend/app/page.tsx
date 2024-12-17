@@ -11,11 +11,11 @@ export default function Home() {
     <>
       <div id="homepage" className="min-h-screen flex flex-col justify-center items-center p-4 md:p-8">
         
-        <h1 id="homepage" className="font-title text-gray-600 text-6xl md:text-9xl motion-blur-in-3xl motion-duration-500 text-center">
+        <h1 id="homepage" className="font-title dark:text-gray-100 text-gray-600 text-6xl md:text-9xl motion-blur-in-3xl motion-duration-500 text-center">
           Welcome
         </h1>
 
-        <p className="font-title text-white text-4xl md:text-5xl motion-blur-in-3xl motion-duration-1000 text-center mt-10">to, <a className="font-title text-white text-4xl md:text-7xl motion-blur-in-3xl motion-duration-1500 text-center mt-10 underline hover:text-red-700" href="https://github.com/gaamfer">gaamfer</a></p>
+        <p className="font-title dark:text-slate-500 text-white text-4xl md:text-5xl motion-blur-in-3xl motion-duration-1000 text-center mt-10">to, <a className="font-title dark:text-slate-500 text-white text-4xl md:text-7xl motion-blur-in-3xl motion-duration-1500 text-center mt-10 underline hover:text-red-700" href="https://github.com/gaamfer">gaamfer</a></p>
         
         <div className="self-center mt-20 md:mt-40 motion-blur-in motion-delay-2000 ">
           <Link  to='most-recent' spy={true} smooth={true} offset={50} duration={500} containerId="scroll-container">

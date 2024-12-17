@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const API_URL = process.env.NEXT_PUBLIC_REACT_APP_API_URL;
-const MY_DOCS = process.env.NEXT_PUBLIC_MY_DOCS;
+
 
 export async function ProjectsData() {
     const response = await axios.get(`${API_URL}projects/`);
@@ -23,7 +23,7 @@ export async function CategoriesData() {
     return response.data;
 }
 
-export async function getDocs () {
-    const response = await axios.get(`${MY_DOCS}`);
+export async function DocumentsData () {
+    const response = await axios.get(`${API_URL}documents/`);
     return response.data;
 }

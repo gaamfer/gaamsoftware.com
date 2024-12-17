@@ -7,9 +7,8 @@ export default async function DocPage () {
         <>
             <BigSection>
                 <div className="h-screen">
-                    <h1>My Documents</h1>
-                    <p>Above you can find all my documents.</p>
-                    <div>
+                    <h1 className="text-4xl font-bold mb-8 dark:text-white text-slate-700">My Documents/</h1>
+                    <div className="mt-10">
                         <MyDocuments />
                     </div>
                 </div>

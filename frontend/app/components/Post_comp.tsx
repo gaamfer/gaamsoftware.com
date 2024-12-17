@@ -150,12 +150,12 @@ export function Card_Post() {
 
                                     <div className="mt-3">
                                         <h3
-                                        className="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4"
+                                        className="font-medium dark:text-white text-gray-900 group-hover:underline group-hover:underline-offset-4"
                                         >
                                             {post.header}
                                         </h3>
 
-                                        <p className="mt-1 text-sm text-gray-700">{post.timestamp.split('T')[0]}</p>
+                                        <p className="mt-1 text-sm dark:text-gray-300 text-gray-700">{post.timestamp.split('T')[0]}</p>
                                     </div>
                                     </a>
                                 </li>

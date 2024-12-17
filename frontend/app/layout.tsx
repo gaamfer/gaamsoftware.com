@@ -31,8 +31,8 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en" className="h-full ">
-      <body className="bg-gradient-to-b from-orange-300 to-orange-700 max-h-full flex flex-col">
+    <html lang="en" className="h-full scroll-smooth light antialiased">
+      <body className="bg-gradient-to-b from-orange-200 to-orange-300 dark:from-slate-700 dark:to-slate-900 max-h-full flex flex-col">
       <header className="fixed left-0 right-0 z-50 motion-bg-out-transparent backdrop-blur-md">
       <div className={`mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ${ishome? ' motion-blur-in motion-delay-1500': ''}`}>
       <div className="flex h-16 items-center justify-between">
@@ -46,7 +46,7 @@ export default function RootLayout({
         </div>
         
         {/* Navigation Bar */}
-        <div id="Navi" className="hidden md:flex md:items-center md:gap-12 mx-auto">
+        <div id="Navi" className="hidden md:flex md:items-center md:gap-12 mx-auto font-bold">
           <nav aria-label="Global">
             <ul className="flex gap-20 text-sm">
               <li>
@@ -80,7 +80,7 @@ export default function RootLayout({
         {/* Mobile View Button */}
         <div id="latView" className="flex items-center gap-4 md:hidden">
           <button 
-            className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 dark:bg-transparent dark:text-white dark:hover:text-white/75"
+            className="rounded p-2 text-gray-600 transition hover:text-gray-600/75 dark:bg-transparent dark:text-white dark:hover:text-white/75"
             onClick={Clickbar}
             > 
             <svg

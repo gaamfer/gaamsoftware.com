@@ -3,6 +3,7 @@ import Image from 'next/image';
 import me from "../images/Gabi.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareGithub, faLinkedin, faYoutube, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
 
 export default function About() {
     return (
@@ -41,12 +42,18 @@ export default function About() {
               <p className=" font-bold mt-4 text-gray-500">Let&apos;s make something amazing together!</p>
               <p className=" font-semibold mt-4 text-gray-950">Gabriel Ferreira</p>
 
-              <a
-                href="/ContactMe"
-                className="mt-8 inline-block rounded border border-orange-600 bg-orange-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-orange-600 focus:outline-none focus:ring active:text-gray-950"
-              >
-                Get in Touch
-              </a>
+                <div className="flex items-center gap-4 mt-8">
+                <a
+                  href="/ContactMe"
+                  className="inline-block rounded border border-orange-600 bg-orange-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-orange-600 focus:outline-none focus:ring active:text-gray-950"
+                >
+                  Get in Touch 
+                </a>
+                <a href="About/TechStack" className="text-black transform transition-transform hover:scale-125 text-center">
+                  <FontAwesomeIcon className='size-6' icon={faCode} />
+                  <p className="text-xs text-black font-bold">Tech Stack</p>
+                </a>
+                </div>
                 <div className="mx-auto max-w-screen-xl  mt-8">
                   <div className="flex flex-col lg:flex-row md:items-center justify-between w-full">
                       <div id="socials" className="flex space-x-6 text-3xl mt-2 lg:mt-2 text-black ">
@@ -62,6 +69,7 @@ export default function About() {
                         <a href="https://x.com/GGAFerreira" className="transform transition-transform hover:scale-125">
                           <FontAwesomeIcon icon={faXTwitter} />
                         </a>
+                        
                       </div>
                     </div>
                   </div>
@@ -71,8 +79,7 @@ export default function About() {
             </div>
           </section>
         </div>
-
-        <span id='TechStack'></span>
+        {/* meu curriculo area */}
         <Banner/>
       </BigSection>
       </>
