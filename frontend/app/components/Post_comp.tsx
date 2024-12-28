@@ -67,10 +67,6 @@ export function Post() {
                   <a href={`${window.location.pathname}/${post.id}`}>
                   <h3 className="mt-0.5 text-lg text-gray-900">{post.header}</h3>
                   </a>
-
-                  <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                   <Markdown>{post.info}</Markdown>
-                  </p>
                 </div>
                 </article>
             ))}

@@ -3,11 +3,11 @@
 import React from 'react';
 import { useParams } from 'next/navigation';
 import {useEffect, useState} from 'react';
-// import { API_URL } from '@/services/info';
 import { BigSection } from '@/app/components/sections';
 import { PostData } from '@/services/info';
-import Markdown from 'react-markdown';
-// import Image from 'next/image';
+import { PostLegacy } from '@/app/components/Post_legacy'; // has a prop called fileUrl
+
+
 
 interface Post{
     id: number;
@@ -20,12 +20,13 @@ export default function Post(){
     const {id}= useParams(); // get the dynamic ID from the url
     const [post , setPost] = useState<Post | null>(null);
     const [error, setError] = useState<Error | null>(null);
+
     useEffect(()=>{
         if (id) {
             async function fetchPost() {
                 try{
-                    const data = await PostData(Number(id));
-                    setPost(data);
+                    const data = await PostData(Number(id)); // get data from post in the api
+                    setPost(data); // set post to data fetched from api
                 } catch (error: unknown) {
                     setError(error as Error)
                 }
@@ -41,12 +42,14 @@ export default function Post(){
     if (error){
         return <div> Error loadind data: {error.message}</div>
     }
+
+   
     return (
         <>
             <BigSection>
-            <div className='p-8 bg-slate-700 rounded-lg'>
+            <div className=' p-8 bg-orange-600 dark:bg-slate-800 rounded-lg'>
                 <div className='md:mx-16'>
-                    <h1 className='mt-4 md:text-start text-center font-extrabold text-3xl'>{post.header}</h1>
+                    <h1 className='mt-4 md:text-start text-center font-extrabold text-3xl dark:text-slate-200'>{post.header}</h1>
                     <div className="flex justify-center m-10 ">
                         <img
                         alt="" 
@@ -54,9 +57,9 @@ export default function Post(){
                         className="max-w-full"
                         />
                     </div>
-                    <div className='rounded-lg md:flex md:justify-center font-semibold bg-white'>
-                    <p className='m-2 text-black font-semibold' > <Markdown>{post.info}</Markdown></p>
-                    </div>
+                    <article className='rounded-lg bg-slate-900 p-8'>
+                        <PostLegacy fileUrl={post.info} />
+                    </article>
                 </div>    
             </div>
             </BigSection>
