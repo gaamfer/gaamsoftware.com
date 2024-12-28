@@ -4,7 +4,7 @@ import React from "react";
 import { PostsData} from "@/services/info";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Markdown from 'react-markdown';
+
 
 
 // Create an interface so that TS inteerpretates better the Post

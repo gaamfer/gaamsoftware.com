@@ -23,9 +23,9 @@ export function PostLegacy({ fileUrl }: PostProps) {
                 console.log('Fetching from URL: ', fileUrl); //Debug log
                 const data = await readFileContent(fileUrl);
                 setContent(data);
-            } catch (err: any) {
+            } catch (err: unknown) {
                 console.error('Fetch error: ', err); // Debug log
-                setError(`Failed to load content: ${err.message}`);
+                setError(`Failed to load content: ${err}`);
             } finally {
                 setIsLoading(false);
             }
